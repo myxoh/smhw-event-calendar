@@ -15,7 +15,7 @@ class EventsController < ApplicationController
           status: 1,
           event: @event,
           from: @event.beginning_wday(params[:week]),
-          to: @event.duration(params[:week])
+          duration: @event.duration_days(params[:week])
       }
     else
       render json: {
