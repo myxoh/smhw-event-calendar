@@ -6,11 +6,11 @@ class Event < ActiveRecord::Base
 
   def duration_days (beginning_of_week)
     wday=beginning_wday(beginning_of_week)
-    [7-wday, wday + duration + 1].min
+    [7-wday, duration].min
   end
 
   def duration
-    (finish.to_date - start.to_date).to_i
+    (finish.to_date - start.to_date).to_i + 1
   end
 
 

@@ -13,7 +13,9 @@ class EventsController < ApplicationController
     if (@event.save) then
       render json: {
           status: 1,
-          event: @event
+          event: @event,
+          from: @event.beginning_wday(params[:week]),
+          to: @event.duration(params[:week])
       }
     else
       render json: {
