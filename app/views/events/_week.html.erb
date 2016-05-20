@@ -1,6 +1,8 @@
-<table>
+<table border="1">
   <thead>
-    <%= render partial: 'day', collection: @days %>
+  <%= render partial: 'day', collection: @days %>
   </thead>
-  <tr></tr>
+  <tbody>
+  <%= render partial: 'event', collection: @events %>
+  </tbody>
 </table>
