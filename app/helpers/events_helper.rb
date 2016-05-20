@@ -5,4 +5,7 @@ module EventsHelper
   def formatted day
     return day.strftime("%d %b")
   end
+  def simple day
+    day.strftime("%Y-%m-%d")
+  end
 end

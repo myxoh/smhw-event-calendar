@@ -1,13 +1,16 @@
 <table style="width:100%">
   <thead>
-    <%= render partial: 'day', collection: @days %>
+  <%= render partial: 'day', collection: @days %>
   </thead>
   <tbody>
-    <%= render partial: 'event', collection: @events %>
+  <%= render partial: 'event', collection: @events %>
   </tbody>
   <tfoot>
-    <tr>
-      <%7.times do |blank|%><td class="solid"></td><%end%>
-    </tr>
+  <tr>
+    <% 7.times do |blank| %>
+        <td style="border-bottom-style:solid">
+        </td>
+    <% end %>
+  </tr>
   </tfoot>
 </table>
