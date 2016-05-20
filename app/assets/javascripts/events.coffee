@@ -4,8 +4,8 @@
 addBlankTable = () ->
   return "<td></td>"
 addEvent = (data) ->
-  td="<td colspan='"+data.duration+"'>"
-  td+=(data.event.title)
+  td="<td colspan='"+data.duration+"' class='event'>"
+  td+="<b>"+data.event.title+"</b>"
   td+="<hr>"
   td+=data.event.description
 create_table = (data)->
@@ -15,7 +15,7 @@ create_table = (data)->
   remaining=7-data.duration-data.from
   row+=addBlankTable() for i in [1..remaining] unless remaining==0
 
-  $("table  > tbody:last-child")  .append(row)
+  $("tbody")  .append(row)
 verify = (data)->
   console.log(data)
   if data.status == 1
