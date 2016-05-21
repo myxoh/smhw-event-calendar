@@ -5,11 +5,11 @@ class Event < ActiveRecord::Base
   before_save :check_order_start_finish
 
   def beginning_wday (beginning_of_week)
-    [[0, date_difference(beginning_of_week)].max, 6].min
+    [[0, days_from_beginning_of_week(beginning_of_week)].max, 6].min
   end
 
-  def duration_days (beginning_of_week)
-    wday = date_difference(beginning_of_week)
+  def duration_days (beginning_of_week) #Duration during this week (So no more than 7)
+    wday = days_from_beginning_of_week(beginning_of_week)
     [[7-wday, duration, duration+wday, 7].min, 0].max
   end
 
@@ -26,7 +26,7 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def date_difference (beginning_of_week)
+  def days_from_beginning_of_week (beginning_of_week)
     date_difference = (start.to_date - beginning_of_week.to_date).to_i
   end
 

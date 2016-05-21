@@ -1,4 +1,8 @@
 <td class="solid choose" data-wday="<%= wday(day) %>" data-date="<%= simple(day) %>" id="choose_<%= wday(day) %>">
-  <%= weekday(day) %>, <br>
-  <%= formatted(day) %>
+  <div class="center">
+  <%if day==@today%><b><%end%>
+    <%= weekday(day) %>, <br>
+    <%= formatted(day) %>
+  <%if day==@today%></b><%end%>
+  </div>
 </td>

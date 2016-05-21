@@ -1,18 +1,24 @@
 <div class="add_event">
   <h3>Add:</h3>
-  <p>You can select the dates clicking on the dates below</p>
-  <%= form_for(Event.new(), remote: true, class:"form-publish") do |f| %>
-      <%= f.label :start %><br>
-      <%= f.date_field :start, class:"form-control" %>
-      <%= f.label :finish %>
-      <%= f.date_field :finish, class:"form-control" %>
-      <%= f.label :title %>
-      <%= f.text_field :title, class:"form-control" %>
-      <%= f.label :description %>
-      <%= f.text_area :description, class:"form-control" %><br>
-
-      <input type="hidden" name="week" value="<%=@days[0]%>" >
-
-      <%= f.submit "Create Event", class:"btn btn-success" %>
+  <p><b>Note:</b> You can select the dates clicking on the calendar's dates</p>
+  <%= form_for(Event.new(), remote: true, class: "form-publish") do |f| %>
+      <div class="field">
+        <%= f.label :start %><br>
+        <%= f.date_field :start, class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :finish %>
+        <%= f.date_field :finish, class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %><br>
+      </div>
+      <input type="hidden" name="week" value="<%= @days[0] %>">
+      <%= f.submit "Create Event", class: "btn btn-success" %>
   <% end %>
 </div>

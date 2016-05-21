@@ -1,10 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @today = Time.now.day
+    @today = Time.now.beginning_of_day
 
     beginning_of_week = Time.now.beginning_of_week
     @days = (0..6).to_a.collect { |past| beginning_of_week+past.days }
     end_of_week = @days.last + 1.days #Technically beginning of next week
+
     @events = Event.where("(start > ? AND start < ?) OR (finish > ? AND finish < ?)", beginning_of_week, end_of_week, beginning_of_week, end_of_week)
   end
 
