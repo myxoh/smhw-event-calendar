@@ -11,3 +11,39 @@ two:
   finish: 2016-05-20 19:54:41
   title: MyString
   description: MyText
+
+pastpast:
+  start: <%=(Time.now.beginning_of_week - 2.days).strftime("%Y-%m-%d")%>
+  finish: <%=(Time.now.beginning_of_week - 1.days).strftime("%Y-%m-%d")%>
+  title: Title
+  description: Description
+
+pastpresent:
+  start: <%=(Time.now.beginning_of_week - 2.days).strftime("%Y-%m-%d")%>
+  finish: <%=(Time.now.beginning_of_week + 1.days).strftime("%Y-%m-%d")%>
+  title: Title
+  description: Description
+
+pastfuture:
+  start: <%=(Time.now.beginning_of_week - 2.days).strftime("%Y-%m-%d")%>
+  finish: <%=(Time.now.beginning_of_week + 9.days).strftime("%Y-%m-%d")%>
+  title: Title
+  description: Description
+
+presentpresent:
+   start: <%=(Time.now.beginning_of_week + 2.days).strftime("%Y-%m-%d")%>
+   finish: <%=(Time.now.beginning_of_week + 3.days).strftime("%Y-%m-%d")%>
+   title: Title
+   description: Description
+
+presentfuture:
+  start: <%=(Time.now.beginning_of_week + 2.days).strftime("%Y-%m-%d")%>
+  finish: <%=(Time.now.beginning_of_week + 9.days).strftime("%Y-%m-%d")%>
+  title: Title
+  description: Description
+
+futurefuture:
+  start: <%=(Time.now.beginning_of_week + 9.days).strftime("%Y-%m-%d")%>
+  finish: <%=(Time.now.beginning_of_week + 10.days).strftime("%Y-%m-%d")%>
+  title: Title
+  description: Description
