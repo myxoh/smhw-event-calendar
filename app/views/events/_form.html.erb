@@ -1,6 +1,6 @@
 <div class="add_event">
   <h3>Add:</h3>
-  <p>You can select the dates </p>
+  <p>You can select the dates clicking on the dates below</p>
   <%= form_for(Event.new(), remote: true, class:"form-publish") do |f| %>
       <%= f.label :start %><br>
       <%= f.date_field :start, class:"form-control" %>

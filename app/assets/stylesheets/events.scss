@@ -1,15 +1,19 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+tr{
+  max-width:100%;
+}
 td {
   border-color: #999;
   border-width: 1px;
   border-left-style: solid;
   border-right-style: solid;
-  max-width:15%;
+  word-wrap:break-word;
 }
 table {
-  max-width:600px;
+  table-layout:fixed;
+  width: 100%;
 }
 .solid {
   border-style: solid;
