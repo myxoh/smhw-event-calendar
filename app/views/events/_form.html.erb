@@ -1,17 +1,19 @@
-<%= form_for(Event.new(), remote: true) do |f| %>
-    <%= f.label :start %>
-    <%= f.date_field :start %> <br>
+<div class="add_event">
+  <%= form_for(Event.new(), remote: true, class:"form-publish") do |f| %>
+      <%= f.label :start %><br>
+      <%= f.date_field :start, class:"form-control" %> <br>
 
-    <%= f.label :finish %>
-    <%= f.date_field :finish %> <br>
+      <%= f.label :finish %>
+      <%= f.date_field :finish, class:"form-control" %> <br>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %> <br>
+      <%= f.label :title %>
+      <%= f.text_field :title, class:"form-control" %> <br>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %> <br>
+      <%= f.label :description %>
+      <%= f.text_area :description, class:"form-control" %> <br>
 
-    <input type="hidden" name="week" value="<%=@days[0]%>" >
+      <input type="hidden" name="week" value="<%=@days[0]%>" >
 
-    <%= f.submit "Create Event" %>
-<% end %>
+      <%= f.submit "Create Event", class:"btn btn-success" %>
+  <% end %>
+</div>

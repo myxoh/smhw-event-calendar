@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 # For windows development:
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+#Design: Bootstrap
+gem 'bootstrap-sass',       '3.2.0.0'
+gem 'rails-assets-tether', '>= 1.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
