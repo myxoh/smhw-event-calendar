@@ -11,11 +11,11 @@ addEvent = (data) ->
   td += data.event.description
 
 display_error = (key, messages)->
-  alert(key+": "+message) for new_key, message of messages
+  alert(key + ": " + message) for new_key, message of messages
 
 display_errors = (data)->
   console.log(data)
-  display_error(key,messages) for key, messages of data.errors
+  display_error(key, messages) for key, messages of data.errors
 
 create_table = (data)->
   row = "<tr>"
@@ -34,15 +34,43 @@ verify = (data)->
       create_table data
   else
     display_errors data
-    
+
+chosen_date = null
+from_wday = null
+to_wday = null
+
+choose_from = (date, wday) ->
+  $(".choose").removeClass("selected")
+  $("#choose_" + wday).addClass("selected")
+  from_wday = wday
+  chosen_date = date
+  console.log(date)
+  $("#event_start").val(date)
+  $("#event_finish").val(null)
+
+choose_to = (date, wday) ->
+  $(".choose").removeClass("selected")
+  to_wday = wday
+  $("#choose_" + day).addClass("selected") for day in [from_wday..to_wday]
+  $("#event_finish").val(date)
+  chosen_date = null
+
+choose = (element)->
+  date = $(element).data("date")
+  wday = $(element).data("wday")
+  if(chosen_date == null)
+    choose_from(date, wday)
+  else
+    choose_to(date, wday)
+
 ready = ->
   console.log("ready");
   $("form").bind "ajax:success", (evt, data, status, xhr) ->
     verify(data)
   $("form").bind "ajax:error", (xhr, status, error) ->
     notify(error)
-  $(".choose").bind "click", ()->
-    return choose
+  $(".choose").bind "click", (evt)->
+    return choose(evt.toElement)
 
 $(document).ready(ready);
 $(document).on('page:load', ready);

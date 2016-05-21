@@ -8,4 +8,7 @@ module EventsHelper
   def simple day
     day.strftime("%Y-%m-%d")
   end
+  def wday day
+    day.wday
+  end
 end
