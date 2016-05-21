@@ -9,6 +9,6 @@ module EventsHelper
     day.strftime("%Y-%m-%d")
   end
   def wday day
-    day.wday
+    (day.wday + 6) % 7 #Returns wday where Monday = 0 and not Sunday = 0
   end
 end
