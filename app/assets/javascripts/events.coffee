@@ -10,6 +10,13 @@ addEvent = (data) ->
   td += "<hr>"
   td += data.event.description
 
+display_error = (key, messages)->
+  alert(key+": "+message) for new_key, message of messages
+
+display_errors = (data)->
+  console.log(data)
+  display_error(key,messages) for key, messages of data.errors
+
 create_table = (data)->
   row = "<tr>"
   row += addBlankTable() for i in [1..data.from] unless data.from == 0
