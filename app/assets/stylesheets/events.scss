@@ -1,27 +1,33 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-tr{
-  max-width:100%;
+tr {
+  max-width: 100%;
 }
-td {
+
+td, .event {
   border-color: #999;
   border-width: 1px;
   border-left-style: solid;
   border-right-style: solid;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
+
 table {
-  table-layout:fixed;
+  table-layout: fixed;
   width: 100%;
 }
+
 .solid {
   border-style: solid;
 }
 
 .event {
   background-color: #ffcc33;
-  border-style: solid;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 25px;
+  padding: 10px;
 }
 
 .add_event {
@@ -30,17 +36,16 @@ table {
   max-width: 500px;
 }
 
-.choose{
+.choose {
   cursor: pointer;
 }
 
-.center{
-    width:70%;
-    margin-left:30%;
-    margin-top:10px;
-    margin-bottom:10px;
+.center {
+  width: 70%;
+  margin-left: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-
 
 .selected {
   background-color: #1EAEDB;
