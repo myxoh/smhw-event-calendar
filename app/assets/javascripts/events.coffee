@@ -8,6 +8,7 @@ ready = ->
   $("form").bind "ajax:error", (xhr, status, error) ->
     alert(error)
   $(".choose").bind "click", ()->
+    
     return SelectHeader.choose(this)
 
 $(document).ready(ready);
