@@ -1,0 +1,16 @@
+<tr><%7.times do%><td>&nbsp;</td><%end%></tr>
+<tr>
+  <% start_day = event.beginning_wday @days[0] %>
+  <% duration = event.duration_days @days[0] %>
+  <% start_day.times do %><td></td><% end %>
+  <td colspan="<%=duration%>">
+    <div class="event">
+      <b><%= event.title %></b>
+      <br>
+      <%=event.description%>
+    </div>
+  </td>
+  <% leftover = 7 - duration - start_day %>
+  <% leftover.times do %><td></td><% end %>
+</tr>
+<tr><%7.times do%><td>&nbsp;</td><%end%></tr>
