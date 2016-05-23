@@ -47,6 +47,7 @@ create_table = (data)->
   row += addBlankColumn() for i in [1..remaining] unless remaining == 0
   row += "</tr>"
   row += addBlankRow()
+  
   $("tbody").append(row)
 
 
