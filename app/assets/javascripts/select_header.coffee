@@ -9,7 +9,6 @@ SelectHeader.choose = (element)->
   return false
 
 chosen_date = null
-
 from_wday = null
 to_wday = null
 
